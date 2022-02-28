@@ -1,0 +1,142 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Whack-an-x!</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+</style>
+    </head>
+
+<body>
+
+  <button onclick="myFunction()"><i class="fa fa-times"></i></button>
+    
+  <div id="whack-a-mole">
+    <div class="rectangle">
+
+      <div class="circle" id="1">
+        <a href="#"><i class="fa fa-times"></i></a>
+      </div>
+      <div class="circle" id="2"></div>
+      <div class="circle" id="3"></div>
+      <div class="circle" id="4"></div>
+      <div class="circle" id="5"></div>
+      <div class="circle" id="6"></div>
+      <div class="circle" id="7"></div>
+      <div class="circle" id="8"></div>
+      <div class="circle" id="9"></div>
+      <div class="circle" id="10"></div>
+      <div class="circle" id="11"></div>
+      <div class="circle" id="12"></div>
+      <div class="circle" id="13"></div>
+      <div class="circle" id="14"></div>
+      <div class="circle" id="15"></div>
+    </div>
+  
+  </div>
+    
+    <style>
+        body {
+  background-color: #e6e6e6;
+}
+
+.rectangle {
+  width: 475px;
+  height: 300px;
+  border: 2px #ff5100 solid;
+  border-radius: 15px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 6px 6px #ff5100;
+  background-color: lightblue;
+}
+
+button {
+  color: #ff5100;
+  border: 2px solid #ff5100;
+  border-radius: 50%;
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+button:hover {
+  opacity: 0.75;
+  margin: 20px;
+  transform: scale(90%);
+}
+
+.circle {
+  background-color: #e6e6e6;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px #ff5100 solid;
+  margin: 0 auto;
+  margin: 15px;
+  position: relative;
+  float: left;
+  box-shadow: inset 4px 4px #ff5100;
+}
+
+#whack-a-mole {
+  display: none;
+}
+
+.circle a {
+  color: #ff5100;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle a:hover {
+  opacity: 0.65;
+}
+
+    </style>
+    
+    <script>
+        //click x icon to reveal game
+
+function myFunction() {
+  var x = document.getElementById("whack-a-mole");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+//moving x icons
+
+var boxes = document.querySelectorAll(".circle");
+console.log(boxes);
+
+var currentBox = null;
+var score = 0;
+
+setInterval(function () {
+  if (currentBox !== null) {
+    boxes[currentBox].innerHTML = "";
+  }
+  currentBox = Math.floor(Math.random() * 15);
+  boxes[currentBox].innerHTML = '<a href=""><i class="fa fa-times"></i></a>';
+}, 250);
+
+
+
+    </script>
+
+</body>
+
+</html>
+    
